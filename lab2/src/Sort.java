@@ -39,12 +39,12 @@ public class Sort {
         job.setJarByClass(Sort.class);
 
         job.setMapperClass(SortMapper.class);
-        job.setMapOutputKeyClass(Text.class);
+        job.setMapOutputKeyClass(FloatWritable.class);
         job.setMapOutputValueClass(Text.class);
 
         job.setReducerClass(SortReducer.class);
         job.setOutputKeyClass(Text.class);
-        job.setOutputValueClass(Text.class);
+        job.setOutputValueClass(FloatWritable.class);
 
         FileInputFormat.setInputPaths(job, new Path(args[0]));
         FileOutputFormat.setOutputPath(job, new Path(args[1]));
